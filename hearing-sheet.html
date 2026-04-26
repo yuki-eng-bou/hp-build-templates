@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP制作 ヒアリングシート</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #1F3A2D;
+    --ink: #1A1A1A;
+    --line: #d4d4d4;
+  }
+  body { background: white; color: var(--ink); font-family: 'Noto Sans JP', sans-serif; }
+  .text-brand { color: var(--brand); }
+  .bg-brand { background: var(--brand); }
+  .border-brand { border-color: var(--brand); }
+  .write-line {
+    border-bottom: 1px solid var(--line);
+    min-height: 30px;
+    padding: 4px 4px;
+  }
+  .write-box {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    min-height: 80px;
+  }
+  .check-box {
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--ink);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  .section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand);
+    color: white;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  @media print {
+    .no-print { display: none; }
+    .page-break { page-break-before: always; }
+  }
+  @page { size: A4; margin: 18mm 14mm; }
+</style>
+</head>
+<body class="px-6 md:px-10 py-8">
+
+<div class="max-w-4xl mx-auto">
+
+  <!-- ヘッダー -->
+  <header class="border-b-2 border-brand pb-3 mb-8">
+    <div class="flex items-end justify-between gap-4 flex-wrap">
+      <div>
+        <h1 class="font-bold text-2xl">HP制作 ヒアリングシート</h1>
+        <p class="text-[12px] text-gray-600 mt-1">記入できる範囲で大丈夫です。</p>
+      </div>
+      <div class="text-right text-[11px] text-gray-600 space-y-1">
+        <div>案件番号：<span class="inline-block min-w-[80px] border-b border-gray-400 px-2">　　　</span></div>
+        <div>記入日：<span class="inline-block min-w-[110px] border-b border-gray-400 px-2">　　　</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 基本情報 -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">1</span>
+      <h2 class="font-bold text-lg">基本情報</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="text-[12px] text-gray-700">会社名 / 屋号</label>
+        <div class="write-line"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">業種・事業内容</label>
+        <div class="write-line"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">担当者名</label>
+        <div class="write-line"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">連絡先（電話 / メール / LINE）</label>
+        <div class="write-line"></div>
+      </div>
+      <div class="md:col-span-2">
+        <label class="text-[12px] text-gray-700">所在地</label>
+        <div class="write-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 現状 -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">2</span>
+      <h2 class="font-bold text-lg">現状について</h2>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="text-[12px] text-gray-700">今のHPはありますか？</label>
+        <div class="flex flex-wrap gap-5 mt-2 text-[13px]">
+          <label><span class="check-box"></span>あり（URL：<span class="inline-block w-64 border-b border-gray-400 align-bottom">　</span>）</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>制作中</label>
+        </div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">なぜHPを作りたい / 作り直したいですか？</label>
+        <div class="write-box mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">今の集客や認知の課題があれば教えてください</label>
+        <div class="write-box mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ターゲット -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">3</span>
+      <h2 class="font-bold text-lg">ターゲット</h2>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="text-[12px] text-gray-700">どんな人にHPを見てほしいですか？（複数可）</label>
+        <p class="text-[11px] text-gray-500 mt-1">例：別府で起業したい20-30代、シニア向けデイサービスを探す家族 など</p>
+        <div class="write-box mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">優先順位（1番目に届けたい層は？）</label>
+        <div class="write-line mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ゴール -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">4</span>
+      <h2 class="font-bold text-lg">ゴール（達成したいこと）</h2>
+    </div>
+    <p class="text-[12px] text-gray-700 mb-3">HPを通じて訪問者にしてほしい行動をチェック（複数可）：</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-[13px] mb-4">
+      <label><span class="check-box"></span>問い合わせ（メール・電話・LINE）</label>
+      <label><span class="check-box"></span>来店・来所予約</label>
+      <label><span class="check-box"></span>資料請求・見積依頼</label>
+      <label><span class="check-box"></span>会員登録・申し込み</label>
+      <label><span class="check-box"></span>商品購入</label>
+      <label><span class="check-box"></span>SNSフォロー</label>
+      <label><span class="check-box"></span>認知だけでOK</label>
+      <label><span class="check-box"></span>その他：<span class="inline-block w-40 border-b border-gray-400">　</span></label>
+    </div>
+    <div>
+      <label class="text-[12px] text-gray-700">そのなかで「絶対達成したい」ものは？</label>
+      <div class="write-line mt-2"></div>
+    </div>
+  </section>
+
+  <!-- 05 コンテンツ -->
+  <section class="mb-8 page-break">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">5</span>
+      <h2 class="font-bold text-lg">載せたいコンテンツ</h2>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="text-[12px] text-gray-700">必ず載せたい情報・セクション</label>
+        <p class="text-[11px] text-gray-500 mt-1">例：会社概要・サービス紹介・料金・お客様の声・ブログ・お問い合わせ など</p>
+        <div class="write-box mt-2" style="min-height: 100px;"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">逆に「載せたくない・触れたくない」情報があれば</label>
+        <div class="write-box mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 デザイン -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">6</span>
+      <h2 class="font-bold text-lg">デザインの好み</h2>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="text-[12px] text-gray-700">参考にしたいサイト（3つくらい・URLか名前で）</label>
+        <div class="space-y-3 mt-2">
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">好きな雰囲気・キーワード</label>
+        <p class="text-[11px] text-gray-500 mt-1">例：シンプル / 温かい / プロフェッショナル / モダン / レトロ など</p>
+        <div class="write-box mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">嫌いな雰囲気・避けたい印象</label>
+        <div class="write-box mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">使いたい色・コーポレートカラーがあれば</label>
+        <div class="write-line mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 予算・納期 -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">7</span>
+      <h2 class="font-bold text-lg">予算・納期</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="text-[12px] text-gray-700">予算の目安（初期費用）</label>
+        <div class="write-line mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">月額（運用代行込み）の希望</label>
+        <div class="write-line mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">公開希望時期</label>
+        <div class="write-line mt-2"></div>
+      </div>
+      <div>
+        <label class="text-[12px] text-gray-700">絶対に間に合わせたい期日</label>
+        <div class="write-line mt-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 アセット -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">8</span>
+      <h2 class="font-bold text-lg">用意できる素材</h2>
+    </div>
+    <p class="text-[12px] text-gray-700 mb-3">それぞれ「あり / なし / 用意中 / 任せたい」でチェック：</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[13px]">
+      <div>
+        <span class="font-bold">ロゴ</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">写真（社内・商品・施設）</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">紹介文・キャッチコピー</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">事業概要・料金表</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">お客様の声・実績</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+      <div>
+        <span class="font-bold">独自ドメイン</span>
+        <div class="flex gap-3 mt-1 text-[12px]">
+          <label><span class="check-box"></span>あり</label>
+          <label><span class="check-box"></span>なし</label>
+          <label><span class="check-box"></span>用意中</label>
+          <label><span class="check-box"></span>任せたい</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 自由記入 -->
+  <section class="mb-8">
+    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-brand">
+      <span class="section-num">9</span>
+      <h2 class="font-bold text-lg">その他、伝えておきたいこと</h2>
+    </div>
+    <div class="write-box" style="min-height: 160px;"></div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="border-t-2 border-brand pt-4 mt-10 flex items-center justify-between text-[12px] text-gray-700 flex-wrap gap-3">
+    <div>
+      <div class="text-[10px] tracking-widest text-brand mb-1">SUBMIT TO</div>
+      <div>記入後、メール・LINE等で担当者へお送りください。</div>
+    </div>
+    <div class="text-right text-[10px] text-gray-500">
+      ご記入ありがとうございました
+    </div>
+  </footer>
+
+</div>
+
+<button onclick="window.print()" class="no-print fixed bottom-6 right-6 bg-brand text-white px-6 py-3 rounded text-sm font-medium hover:opacity-90 shadow-lg z-50">
+  印刷 / PDF出力
+</button>
+
+</body>
+</html>
